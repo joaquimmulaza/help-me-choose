@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alterar Imagem com Controle de Intervalo</title>
+<style>
+    #imagem {
+        width: 200px;
+        height: 200px;
+    }
+</style>
+</head>
+<body>
+
+<input type="range" min="1" max="3" value="1" id="intervalo">
+<img id="imagem" src="imagem1.jpg" alt="Imagem">
+
+<script>
+    const intervaloInput = document.getElementById('intervalo');
+    const imagem = document.getElementById('imagem');
+
+    intervaloInput.addEventListener('input', function() {
+        const valorIntervalo = parseInt(intervaloInput.value);
+
+        // Alterar a imagem com base no valor do intervalo
+        switch (valorIntervalo) {
+            case 1:
+                imagem.src = 'imagem1.avif';
+                break;
+            case 2:
+                imagem.src = 'imagem2.avif';
+                break;
+            case 3:
+                imagem.src = 'imagem3.avif';
+                break;
+            default:
+                imagem.src = 'imagem1.avif'; // Caso padrão
+        }
+    });
+</script>
+
+</body>
+</html>
